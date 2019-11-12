@@ -1,0 +1,38 @@
+.navWrapper {
+    display: flex;
+    position: absolute;
+    right: 15px;
+    top: 20px;
+    width: 100%;
+}
+
+.btnWrapper {
+    width: 40%;
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.btnWrapper button {
+    background-color: #519e8a;
+    color: #fff;
+    border: 1px solid #fff;
+    margin-top: 1em;
+    margin-bottom: 0.25em;
+    padding: 10px 10px;
+    font-size: 1em;
+    font-weight: lighter;
+    letter-spacing: 1px;
+    border-radius: 100px;
+    cursor: pointer;
+}
+
+.btnWrapper button:hover {
+    color: #519e8a;
+    background-color: #fff;
+    border: 2px solid #519e8a;
+}
+
+.loginBtn {
+    margin-right: 5px;
+}
+

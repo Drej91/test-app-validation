@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
+import { Link } from 'react-router-dom';
+import './Registration.style.css';
 
-import './Form.style.css';
 
-
-class Form extends Component {
+class Registration extends Component {
     constructor(props) {
         super(props);
 
@@ -68,7 +68,7 @@ class Form extends Component {
               </div>
               <div className="submitBtn">
                     <button type="submit">Register In</button>
-                    <small>Already Have an Account?</small>
+                    <Link to="signIn"><small>Already Have an Account?</small></Link>
               </div>
           </form>
       </div>
@@ -77,4 +77,4 @@ class Form extends Component {
 }
 
 
-export default Form;
+export default Registration;

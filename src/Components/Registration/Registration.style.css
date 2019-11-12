@@ -53,7 +53,7 @@ input::placeholder {
 }
 
 
-  button {
+  .submitBtn button {
     background-color: #519e8a;
     color: #fff;
     border: 2px solid #fff;
@@ -68,7 +68,7 @@ input::placeholder {
     cursor: pointer;
   }
 
-  button:hover {
+  .submitBtn button:hover {
     color: #519e8a;
     background-color: #fff;
     border: 2px solid #519e8a;
