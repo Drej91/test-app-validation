@@ -1,15 +1,33 @@
 .navWrapper {
     display: flex;
-    position: absolute;
-    right: 15px;
-    top: 20px;
+    position: fixed;
+    top: 0;
     width: 100%;
 }
 
+ul {
+  list-style: none;
+  display: flex;
+}
+
+
+li a {
+    margin-top: 1em;
+    display: block;
+    margin: 2vw;
+    font-size: 1em;
+    text-decoration: none;
+    font-size: 1em;
+    color: white;
+    border: 1px solid #fff;
+    padding: 10px 10px;
+    background-color: #519e8a;
+  }
+
 .btnWrapper {
-    width: 40%;
+    width: auto;
     margin-left: auto;
-    margin-right: 0;
+    margin-right: 40px;
 }
 
 .btnWrapper button {

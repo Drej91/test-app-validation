@@ -1,9 +1,34 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+
+
 class Login extends Component {
     constructor(props){
-        super()
+        super(props);
+
+        this.state = {
+            username: "",
+            password: ""
+        }
+    }   
+
+    handleSubmit = e => {
+        e.preventDefault();
+
+        const { username, password } = this.state;
+
+        try {
+            //slanje parametara
+        } catch (error) {
+            console.log(error);
+        }
     }
+
+    handleChange = e => {
+        const { value, name } = e.target;
+        this.setState({ [name]: value })
+    }
+
     render(){
         return(
             <div className="form-wrapper">
