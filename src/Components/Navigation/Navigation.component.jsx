@@ -1,23 +1,19 @@
-import React, {Component} from 'react';
+import React from 'react';
+import { connect } from 'react-redux';
+
 import Registration from '../Registration/Registration.component';
 import Login from '../Login/Login.component';
 import Home from '../../pages/Home';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import './Navigation.style.css'
 
-class Navigation extends Component {
-    constructor(props){
-        super(props);
-    }
-
-    render(){
-        return(
+const Navigation = ({ currentUser }) => (
             <Router>
             <div className="navWrapper">
                 <nav className="navLinks">
                     <ul>
-                        <Link to="/"><li><a href="#">Home</a></li></Link>
-                        <li><a href="#">About</a></li>
+                        <Link to="/">Home</Link>
+                        <Link to="/">About</Link>
                     </ul>
                 </nav>
                 <div className="btnWrapper">
@@ -32,7 +28,13 @@ class Navigation extends Component {
                 </Switch>
             </Router>
         )
-    }
-}
+ 
 
-export default Navigation;
+//function that allows us to access the state
+//and state is our root reducer
+const mapStateToProps = state => ({
+    currentUser: state.user.currentUser
+})
+
+
+export default connect(mapStateToProps)(Navigation);

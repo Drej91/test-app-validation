@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+
+import { setCurrentUser } from '../../redux/user/user.actions';
 
 
 class Login extends Component {
@@ -8,20 +11,24 @@ class Login extends Component {
 
         this.state = {
             username: "",
-            password: ""
+            password: "",
         }
     }   
 
+    validateForm = () => {
+        const { username, password } = this.state
+        return username.length > 0 && password.length > 0;
+    }
+
     handleSubmit = e => {
         e.preventDefault();
+         const { username, password } = this.state;
+        // try {
+        //     //slanje parametara
 
-        const { username, password } = this.state;
-
-        try {
-            //slanje parametara
-        } catch (error) {
-            console.log(error);
-        }
+        // } catch (error) {
+        //     console.log(error);
+        // }
     }
 
     handleChange = e => {
@@ -56,7 +63,7 @@ class Login extends Component {
                         />
                     </div>
                     <div className="submitBtn">
-                        <button type="submit">Register In</button>
+                        <button type="submit" disabled={ !this.validateForm() }>Log in</button>
                         <Link to="/registerIn"><small>Create an account</small></Link>
                     </div>
                 </form>
@@ -65,4 +72,12 @@ class Login extends Component {
     }
 }
 
-export default Login;
+const mapDispatchToProps = dispatch => ({
+    setCurrentUser: user => dispatch(setCurrentUser(user))
+    //dispatch is way for redux to know that
+    //whatever we are passing to him is going to be
+    //action object that we gonna pass to every reducer
+})
+
+
+export default connect(null,mapDispatchToProps)(Login);
